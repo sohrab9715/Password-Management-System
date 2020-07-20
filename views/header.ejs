@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PMS</title>
+    <link rel="shortcut icon" href="../pic/logo.png" type="image/x-png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link type="text/css" href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="bg">
+    <div class="overlay">
+      <nav class="navbar navbar-expand-sm fixed-top navbar-light bg-light color justify-content-between">
+        <img class="logo" src="../pic/logo.png" alt="Logo" >
+    <button class="navbar-toggler" type="button"  data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" style="border:none;">
+      <i class="fa fa-bars" aria-hidden="true"class="btntoggler" style="color: rgb(36, 34, 58); font-size:28px; background-color: none;"></i>
+
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="/Dashboard">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/Dashboard">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/Dashboard">Contact Us</a>
+      </li>
+      <!-- Password Catagory -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Password Catagory
+        </a>
+        <div class="dropdown-menu submenu">
+          <a class="dropdown-item" href="/Add-New-Catagory">Add New Catagory</a>
+          <a class="dropdown-item" href="/PasswordCatagory">View All Catagory</a>
+        </div>
+      </li>
+  
+      <!-- Password details -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+         Password Details
+        </a>
+        <div class="dropdown-menu submenu ">
+          <a class="dropdown-item" href="/Add-New-Password">Add New Password</a>
+          <a class="dropdown-item" href="/View-All-Password">View All Password</a>
+        </div>
+      </li>   
+        <!-- User Profile -->
+        <li class="nav-item dropdown username">
+          <a class="nav-link " href="#" id="navbardrop" data-toggle="dropdown">
+            <% if(loginusername) { %>
+              <%=loginusername %>
+            <% } %>
+          </a>
+          <div class="dropdown-menu submenu">
+            <a class="dropdown-item" href="/Dashboard">Profile</a>
+            <a class="dropdown-item" href="/logout">Logout</a>
+          </div>
+        </li> 
+    </ul>
+     
+  </div>
+ </nav>

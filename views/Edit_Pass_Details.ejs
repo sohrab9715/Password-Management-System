@@ -1,0 +1,47 @@
+<%- include('header') %>
+      <div class="container ">
+    
+        <div class="row">
+            <div class="col-md-4 form">
+              <h1>Edit Password Details</h1>
+              <hr>
+              <form action="/View-All-Password/edit/" method="POST">
+                <input type="hidden" name="id" value="<%= id %>">
+                <div class="form-group">
+                  <% if(errors !='') { %>
+                    <p style="text-align: center; color: red;"><%= errors.txtpassworddetails.msg %></p>
+                  <%}%>
+
+                  <% if(success !='') { %>
+                    <p style="text-align: center; color: green;"><%= success %></p>
+                   <%}%>
+                    <label for="exampleInputEmail1">Password Catagory</label>
+                    <select class="form-control" name="password_catagory">
+                        <option value="<%= record.Password_Catagory %>"><%= record.Password_Catagory %></option>
+                        <% if(records.length>0) {
+                            records.forEach(function(row){
+                              %>
+                        <option value="<%= row.Password_Catagory %>"><%= row.Password_Catagory %></option>
+                         
+                          
+                         
+                      <%   }) }%>
+                    </select>
+                </div>
+                 
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Password Details</label>
+                  <textarea  class="form-control" rows="5" name="txtpassworddetails"  placeholder="Enter Your Password Details" ><%= record.Password_Details %></textarea>
+                </div> 
+                <button type="submit" class="btn btn-primary">Update Password</button>
+              </form> <br>
+            <p><a href="/View-All-Password"> View All Password List</a></p>
+
+            </div>
+        </div>
+    </div>
+<script>
+    CKEDITOR.replace( 'editor' );
+</script> 
+<%- include('footer') %>
+

@@ -1,0 +1,32 @@
+<%- include('header') %>
+  <br>
+      <div class="container ">
+    
+        <div class="row">
+            <div class="col-md-4 form">
+              <h1>Edit Password Catagory</h1>
+              <hr>
+              <form action="/PasswordCatagory/edit/" method="POST">
+                 <input type="hidden" name="id" value="<%= id %>">
+                <div class="form-group">
+                  <% if(errors !='') { %>
+                       <p style="text-align: center; color: red;"><%= errors.txtpasswordcatagory.msg %></p>
+                  <%}%>
+                  <% if(success !='') { %>
+                    <p style="text-align: center; color: green;"><%= success %></p>
+                   <%}%>
+
+                  <label for="exampleInputEmail1">Catagory Name</label>
+                  <input type="text" class="form-control" value="<%= records.Password_Catagory %>" name="txtpasswordcatagory" placeholder="Enter your password Catagory Name" aria-describedby="emailHelp">
+                </div>
+                <button type="submit" class="btn btn-primary">Update Catagory</button>
+              </form> <br> <br>
+            <p><a href="/PasswordCatagory"> View All Catagory List</a></p>
+
+            </div>
+        </div>
+    </div>
+    <script>
+      CKEDITOR.replace( 'editor' );
+  </script> 
+      <%- include('footer') %>
